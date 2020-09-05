@@ -1,0 +1,17 @@
+.add-task {
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-family: 'HelveticaNeue-Bold'
+  }
+
+.task-form {
+  border: 1px solid black;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: column;
+}
