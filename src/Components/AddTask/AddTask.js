@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import IntegerStep from '../Slider/Slider';
 import './AddTask.css';
-
+import {TasksContext} from '../../TasksContext.js'
 
 const { Option } = Select;
 const layout = {
@@ -21,13 +21,14 @@ const tailLayout = {
 };
 
 const AddTask = () => {
-  const [task, setTask] = useState({title: null, description: null, urgency: 0})
+  const [task, setTask] = useState({title: null, description: null})
   const [form] = Form.useForm();
-
+    const [tasks, setTasks] = useContext(TasksContext)
 
 const onFinish = values => {
     setTask(values)
-    console.log(task)
+    console.log(values)
+    setTasks(prevTasks => [...prevTasks, {title: values.title, description: values.description}])
   };
 
   const onReset = () => {
@@ -39,7 +40,7 @@ const onFinish = values => {
           <p className="add-task"> Add New Task </p>
     <Form {...layout} form={form} labelAlign="left" name="control-hooks" onFinish={onFinish}>
       <Form.Item
-        name="Title"
+        name="title"
         label="Title"
         rules={[
           {
@@ -50,7 +51,7 @@ const onFinish = values => {
         <Input />
       </Form.Item>
       <Form.Item
-        name="Description"
+        name="description"
         label="Description"
         rules={[
           {
@@ -60,7 +61,7 @@ const onFinish = values => {
       >
           <Input.TextArea />
       </Form.Item>
-      <Form.Item
+      {/* <Form.Item
         name="Urgency"
         label="Urgency"
         rules={[
@@ -70,7 +71,7 @@ const onFinish = values => {
         ]}
       >
           <IntegerStep />
-      </Form.Item>
+      </Form.Item> */}
       <Form.Item {...tailLayout}>
           <div className="button-container">
       <Button type="primary" htmlType="submit">

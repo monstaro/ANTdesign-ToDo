@@ -2,22 +2,6 @@ import React from 'react';
 
 import { Card } from 'antd';
 
-const tabList = [
-  {
-    key: 'tab1',
-    tab: 'tab1',
-  },
-  {
-    key: 'tab2',
-    tab: 'tab2',
-  },
-];
-
-const contentList = {
-  tab1: <p>content1</p>,
-  tab2: <p>content2</p>,
-};
-
 
 
 class Task extends React.Component {
