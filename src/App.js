@@ -27,7 +27,6 @@ class App extends React.Component {
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
         <Menu.Item key="1" onClick={() => this.updateActivePage('addtask')}>Add Task</Menu.Item>
         <Menu.Item key="2" onClick={() => this.updateActivePage('alltasks')}>All Tasks</Menu.Item>
-        <Menu.Item key="3" onClick={() => this.updateActivePage('archive')}>Archive</Menu.Item>
       </Menu>
     </Header>
     <Content style={{ padding: '0 50px' }}>
