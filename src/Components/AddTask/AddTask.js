@@ -1,10 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { Form, Input, Button, Select } from 'antd';
-import IntegerStep from '../Slider/Slider';
+import { Form, Input, Button } from 'antd';
 import './AddTask.css';
-import {TasksContext} from '../../TasksContext.js'
+import {TasksContext} from '../../TasksContext.js';
 
-const { Option } = Select;
 const layout = {
   labelCol: {
     span: 8,
@@ -21,23 +19,29 @@ const tailLayout = {
 };
 
 const AddTask = () => {
-  const [task, setTask] = useState({title: null, description: null})
+  const [setTask] = useState({title: null, description: null});
   const [form] = Form.useForm();
-    const [tasks, setTasks] = useContext(TasksContext)
+  const [setTasks] = useContext(TasksContext)
 
 const onFinish = values => {
     setTask(values)
     console.log(values)
-    setTasks(prevTasks => [...prevTasks, {title: values.title, description: values.description}])
+    setTasks(prevTasks => [...prevTasks, {title: values.title, description: values.description, id: Date.now()}])
+    onReset()
+    alert('Task Successfully Added')
   };
 
   const onReset = () => {
     form.resetFields();
   };
 
+
+
   return (
       <div className="task-form">
-          <p className="add-task"> Add New Task </p>
+          <p className="add-task"> Ant ToDo </p>
+          <p className="add-task-sub"> Enter a goal to get started </p>
+
     <Form {...layout} form={form} labelAlign="left" name="control-hooks" onFinish={onFinish}>
       <Form.Item
         name="title"

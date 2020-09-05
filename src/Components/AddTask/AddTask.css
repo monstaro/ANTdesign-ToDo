@@ -1,8 +1,15 @@
 .add-task {
     text-align: center;
     font-size: 3em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: 'HelveticaNeue-Bold'
+  }
+
+  .add-task-sub {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'HelveticaNeue-Bold'
+
   }
 
 .task-form {

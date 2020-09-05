@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.less';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Title } from 'antd';
 import MainContainer from './Components/MainContainer';
 import { TasksProvider } from './TasksContext';
 const { Header, Content, Footer } = Layout;
@@ -23,7 +23,7 @@ class App extends React.Component {
     <TasksProvider>
     <Layout className="layout">
     <Header>
-      <div className="logo" />
+    <div className="logo" />
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
         <Menu.Item key="1" onClick={() => this.updateActivePage('addtask')}>Add Task</Menu.Item>
         <Menu.Item key="2" onClick={() => this.updateActivePage('alltasks')}>All Tasks</Menu.Item>

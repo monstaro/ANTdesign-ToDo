@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './AllTasks.css';
 import { TasksContext } from '../../TasksContext';
 import Task from '../Task/Task';
 
 const AllTasks = () => {
-    const [tasks, setTasks] = useContext(TasksContext)
+    const [tasks] = useContext(TasksContext)
     console.log(tasks)
     return (
 
