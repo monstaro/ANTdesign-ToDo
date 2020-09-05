@@ -5,7 +5,6 @@ import Task from '../Task/Task';
 
 const AllTasks = () => {
     const [tasks] = useContext(TasksContext)
-    console.log(tasks)
     return (
 
         <div className="tasks-container">
