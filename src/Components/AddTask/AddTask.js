@@ -19,9 +19,9 @@ const tailLayout = {
 };
 
 const AddTask = () => {
-  const [setTask] = useState({title: null, description: null});
+  const [task, setTask] = useState({title: null, description: null});
   const [form] = Form.useForm();
-  const [setTasks] = useContext(TasksContext)
+  const [tasks, setTasks] = useContext(TasksContext)
 
 const onFinish = values => {
     setTask(values)
