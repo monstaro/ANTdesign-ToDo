@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ANTdesign-ToDo/precache-manifest.8447cea2aa0a2424d0950cc8bc7afb24.js"
+  "/ANTdesign-ToDo/precache-manifest.d61408c099148cbec587e6ab14b0ccab.js"
 );
 
 self.addEventListener('message', (event) => {
