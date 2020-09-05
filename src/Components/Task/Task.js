@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
+import { TasksContext } from '../../TasksContext';
 
 
-class Task extends React.Component {
-  state = {
-    key: 'tab1',
-    noTitleKey: 'app',
-  };
+const Task = (props) => {
+    console.log(props)
+const [tasks, setTasks] = useContext(TasksContext)
+    
+const deleteTask = (id) => {
+    const newTasks = tasks.filter(task => task.id !== id);
+    setTasks(newTasks)
+  }
+  
 
-  onTabChange = (key, type) => {
-    console.log(key, type);
-    this.setState({ [type]: key });
-  };
-  render() {
-    console.log(this.props)
     return (
       <>
-         <Card title={this.props.title} style={{ width: 300, margin: 10 }}>
-            {this.props.description}
+         <Card title={props.title} style={{ width: 300, margin: 10 }}>
+            {props.description}
+            <br />
+            <Button type="primary" onClick={() => deleteTask(props.id)}>Delete Task</Button>
         </Card>
       </>
     );
-  }
 }
 
 
